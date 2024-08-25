@@ -6,6 +6,8 @@
 class Player : public QGraphicsRectItem
 {
 public:
+    Player() = default;
+
     void keyPressEvent(QKeyEvent * event) override;
 };
 

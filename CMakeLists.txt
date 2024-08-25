@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.16)
 
 project(AirStrike_Game VERSION 0.1 LANGUAGES CXX)
 
@@ -19,6 +19,7 @@ set(PROJECT_SOURCES
 qt_add_executable(AirStrike_Game
     ${PROJECT_SOURCES}
     Player.h Player.cpp
+    Bullet.h Bullet.cpp
 )
 
 target_link_libraries(AirStrike_Game PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)

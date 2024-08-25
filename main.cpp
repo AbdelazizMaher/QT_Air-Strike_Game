@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 
     // create an item to put into the scene
     Player * player1 = new Player();
-    player1->setRect(0,0,100,100);
+    player1->setRect(0, 0, 100, 100);
 
     // add the item to the scene
     scene->addItem(player1);
@@ -25,6 +25,14 @@ int main(int argc, char *argv[])
 
     // add a view to visualize the scene
     QGraphicsView * view = new QGraphicsView(scene);
+
+    view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+    view->setFixedSize(800, 600);
+    scene->setSceneRect(0, 0, 800, 600);
+    player->setPos(view->width() / 2, view->height() - player->rect().height());
+
     // visualize the scene
     view->show();
 
