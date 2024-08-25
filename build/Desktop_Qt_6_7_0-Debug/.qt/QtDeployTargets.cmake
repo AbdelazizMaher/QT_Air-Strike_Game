@@ -1,1 +1,0 @@
-set(__QT_DEPLOY_TARGET_AirStrike_Game_FILE /home/abdelaziz/QT_Air Strike_Game/AirStrike_Game/build/Desktop_Qt_6_7_0-Debug/AirStrike_Game)

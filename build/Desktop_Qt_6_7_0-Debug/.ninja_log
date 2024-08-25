@@ -1,8 +1,0 @@
-# ninja log v5
-0	33	1724575320585094997	AirStrike_Game_autogen/timestamp	8d4867ce564ce84
-0	33	1724575320585094997	AirStrike_Game_autogen/mocs_compilation.cpp	8d4867ce564ce84
-0	33	1724575320585094997	/home/abdelaziz/QT_Air Strike_Game/AirStrike_Game/build/Desktop_Qt_6_7_0-Debug/AirStrike_Game_autogen/timestamp	8d4867ce564ce84
-0	33	1724575320585094997	/home/abdelaziz/QT_Air Strike_Game/AirStrike_Game/build/Desktop_Qt_6_7_0-Debug/AirStrike_Game_autogen/mocs_compilation.cpp	8d4867ce564ce84
-33	185	1724575320745094157	CMakeFiles/AirStrike_Game.dir/AirStrike_Game_autogen/mocs_compilation.cpp.o	aed6ae0149d3bb93
-34	1804	1724575322357085781	CMakeFiles/AirStrike_Game.dir/main.cpp.o	1c4fb7fa6cec9649
-1807	2694	1724575323249081206	AirStrike_Game	87f01d047c77e0f4

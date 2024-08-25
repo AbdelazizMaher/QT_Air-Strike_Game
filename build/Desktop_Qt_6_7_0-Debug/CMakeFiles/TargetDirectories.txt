@@ -1,9 +1,0 @@
-/home/abdelaziz/QT_Air Strike_Game/AirStrike_Game/build/Desktop_Qt_6_7_0-Debug/CMakeFiles/AirStrike_Game.dir
-/home/abdelaziz/QT_Air Strike_Game/AirStrike_Game/build/Desktop_Qt_6_7_0-Debug/CMakeFiles/edit_cache.dir
-/home/abdelaziz/QT_Air Strike_Game/AirStrike_Game/build/Desktop_Qt_6_7_0-Debug/CMakeFiles/rebuild_cache.dir
-/home/abdelaziz/QT_Air Strike_Game/AirStrike_Game/build/Desktop_Qt_6_7_0-Debug/CMakeFiles/list_install_components.dir
-/home/abdelaziz/QT_Air Strike_Game/AirStrike_Game/build/Desktop_Qt_6_7_0-Debug/CMakeFiles/install.dir
-/home/abdelaziz/QT_Air Strike_Game/AirStrike_Game/build/Desktop_Qt_6_7_0-Debug/CMakeFiles/install/local.dir
-/home/abdelaziz/QT_Air Strike_Game/AirStrike_Game/build/Desktop_Qt_6_7_0-Debug/CMakeFiles/install/strip.dir
-/home/abdelaziz/QT_Air Strike_Game/AirStrike_Game/build/Desktop_Qt_6_7_0-Debug/CMakeFiles/AirStrike_Game_autogen_timestamp_deps.dir
-/home/abdelaziz/QT_Air Strike_Game/AirStrike_Game/build/Desktop_Qt_6_7_0-Debug/CMakeFiles/AirStrike_Game_autogen.dir
