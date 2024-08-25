@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 
     view->setFixedSize(800, 600);
     scene->setSceneRect(0, 0, 800, 600);
-    player->setPos(view->width() / 2, view->height() - player->rect().height());
+    player1->setPos(view->width() / 2 - 50, view->height() - player1->rect().height());
 
     // visualize the scene
     view->show();
