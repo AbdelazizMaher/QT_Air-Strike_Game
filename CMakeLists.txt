@@ -20,6 +20,7 @@ qt_add_executable(AirStrike_Game
     ${PROJECT_SOURCES}
     Player.h Player.cpp
     Bullet.h Bullet.cpp
+    Enemy.h Enemy.cpp
 )
 
 target_link_libraries(AirStrike_Game PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)

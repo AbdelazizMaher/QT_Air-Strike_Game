@@ -2,6 +2,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsRectItem>
 #include <QGraphicsView>
+#include <QTimer>
 
 #include "Player.h"
 
@@ -35,6 +36,10 @@ int main(int argc, char *argv[])
 
     // visualize the scene
     view->show();
+
+    QTimer * timer = new QTimer(&a);
+    QObject::connect(timer, &QTimer::timeout, player1, &Player::spawnEnemy);
+    timer->start(2000);
 
     return a.exec();
 }
