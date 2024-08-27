@@ -1,8 +1,11 @@
 #include "Enemy.h"
+#include "Game.h"
 
 #include <QTimer>
 #include <QGraphicsScene>
 #include <random>
+
+extern Game * game; // there is an external global object called game
 
 Enemy::Enemy()
 {
@@ -29,6 +32,8 @@ void Enemy::moveDown()
     setPos(x(), y() + 5);
     if (y() + rect().height() >= 800)
     {
+        game->m_health->decrease();
+
         //TODO --->> CHECK NULLPTR
         scene()->removeItem(this);
         // TODO not best practice

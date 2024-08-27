@@ -1,9 +1,12 @@
 #include "Bullet.h"
 #include "Enemy.h"
+#include "Game.h"
 
 #include <QTimer>
 #include <QGraphicsScene>
 #include <typeinfo>
+
+extern Game * game; // there is an external global object called game
 
 Bullet::Bullet()
 {
@@ -23,6 +26,8 @@ void Bullet::fireBullet()
     {
         if (typeid(*(colliding_items[i])) == typeid(Enemy))
         {
+            game->m_score->increase();
+
             // remove them both
             scene()->removeItem(colliding_items[i]);
             scene()->removeItem(this);
