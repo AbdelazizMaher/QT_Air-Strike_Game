@@ -8,9 +8,9 @@
 
 extern Game * game; // there is an external global object called game
 
-Bullet::Bullet()
+Bullet::Bullet(QGraphicsItem *parent) : QGraphicsPixmapItem(parent)
 {
-    setRect(0, 0, 10, 50);
+    setPixmap(QPixmap(":/assets/images/bullet.png"));
 
     QTimer * timer = new QTimer(this);
 
@@ -40,7 +40,7 @@ void Bullet::fireBullet()
     }
 
     setPos(x(), y() - 10);
-    if (y() + rect().height() < 0)
+    if (y() < 0)
     {
         //TODO --->> CHECK NULLPTR
         scene()->removeItem(this);

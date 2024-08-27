@@ -5,7 +5,7 @@
 #include <QGraphicsScene>
 #include <QKeyEvent>
 
-Player::Player()
+Player::Player(QGraphicsItem *parent) : QGraphicsPixmapItem(parent)
 {
     bulletSound = new QMediaPlayer();
     audioOutput = new QAudioOutput();
@@ -13,6 +13,8 @@ Player::Player()
     bulletSound->setAudioOutput(audioOutput);
     bulletSound->setSource(QUrl("qrc:/assets/audio/explosion.wav"));
     audioOutput->setVolume(50);
+
+    setPixmap(QPixmap(":/assets/images/P38_lvl_3_d1.png"));
 }
 
 void Player::keyPressEvent(QKeyEvent *event)

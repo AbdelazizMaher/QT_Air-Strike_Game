@@ -3,16 +3,18 @@
 #include <QMediaPlayer>
 #include <QUrl>
 #include <QAudioOutput>
+#include <QBrush>
+#include <QImage>
 
 Game::Game(QWidget *parent)
 {
     // create a scene
     m_scene = new QGraphicsScene();
     this->setScene(m_scene);
+    setBackgroundBrush(QBrush(QImage(":/assets/images/background.jpg")));
 
     // create an item to put into the scene
     m_player = new Player();
-    m_player->setRect(0, 0, 100, 100);
 
     // add the item to the scene
     m_scene->addItem(m_player);
@@ -26,7 +28,7 @@ Game::Game(QWidget *parent)
 
     this->setFixedSize(800, 600);
     m_scene->setSceneRect(0, 0, 800, 600);
-    m_player->setPos(this->width() / 2 - m_player->rect().width()/2, this->height() - m_player->rect().height());
+    m_player->setPos(this->width() / 2 - 50, this->height() - 100);
 
     // create the score/health
     m_score = new Score();

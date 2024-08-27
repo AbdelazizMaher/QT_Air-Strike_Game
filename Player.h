@@ -1,16 +1,16 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include <QGraphicsRectItem>
+#include <QGraphicsItem>
 #include <QMediaPlayer>
 #include <QUrl>
 #include <QAudioOutput>
 
-class Player : public QObject, public QGraphicsRectItem
+class Player : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
 public:
-    Player();
+    Player(QGraphicsItem *parent= nullptr);
 
     void keyPressEvent(QKeyEvent * event) override;
 

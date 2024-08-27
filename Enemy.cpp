@@ -7,7 +7,7 @@
 
 extern Game * game; // there is an external global object called game
 
-Enemy::Enemy()
+Enemy::Enemy(QGraphicsItem *parent) : QGraphicsPixmapItem(parent)
 {
     std::random_device rd;
     std::mt19937 mt{ rd() };
@@ -17,8 +17,9 @@ Enemy::Enemy()
     int random_number = dis(mt);
     setPos(random_number, 0);
 
-    // drew the rect
-    setRect(0,0,100,100);
+    setPixmap(QPixmap(":/assets/images/Aircraft_06.png"));
+    setTransformOriginPoint(50,50);
+    setRotation(180);
 
     // connect
     QTimer * timer = new QTimer(this);
@@ -30,7 +31,7 @@ Enemy::Enemy()
 void Enemy::moveDown()
 {
     setPos(x(), y() + 5);
-    if (y() + rect().height() >= 700)
+    if (y() >= 700)
     {
         game->m_health->decrease();
 
