@@ -10,7 +10,7 @@
 class Game : public QGraphicsView
 {
 public:
-    Game();
+    Game(QWidget * parent=nullptr);
 
     QGraphicsScene * m_scene;
     Player * m_player;

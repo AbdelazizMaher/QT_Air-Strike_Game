@@ -30,7 +30,7 @@ Enemy::Enemy()
 void Enemy::moveDown()
 {
     setPos(x(), y() + 5);
-    if (y() + rect().height() >= 800)
+    if (y() + rect().height() >= 700)
     {
         game->m_health->decrease();
 

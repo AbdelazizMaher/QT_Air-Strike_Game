@@ -1,8 +1,10 @@
 #include "Game.h"
 #include <QTimer>
 #include <QMediaPlayer>
+#include <QUrl>
+#include <QAudioOutput>
 
-Game::Game()
+Game::Game(QWidget *parent)
 {
     // create a scene
     m_scene = new QGraphicsScene();
@@ -35,17 +37,19 @@ Game::Game()
     m_health->setPos(m_health->x(), m_health->y() + 50);
     m_scene->addItem(m_health);
 
-    QTimer * timer = new QTimer();
+    QTimer * timer = new QTimer(parent);
     QObject::connect(timer, &QTimer::timeout, m_player, &Player::spawnEnemy);
     timer->start(2000);
 
     // play background music
-    QMediaPlayer * bg_music = new QMediaPlayer();
-    bg_music->setSource(QUrl("qrc:/assets/audio/ObservingTheStar.wav"));
-    bg_music->play();
+    QMediaPlayer * audioPlayer = new QMediaPlayer(parent);
+    QAudioOutput * audioOutput = new QAudioOutput(parent);
+
+    audioPlayer->setAudioOutput(audioOutput);
+    audioPlayer->setSource(QUrl("qrc:/assets/audio/ObservingTheStar.ogg"));
+    audioOutput->setVolume(50);
+    audioPlayer->play();
 
     // visualize the scene
     this->show();
-
-
 }

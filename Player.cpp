@@ -5,6 +5,16 @@
 #include <QGraphicsScene>
 #include <QKeyEvent>
 
+Player::Player()
+{
+    bulletSound = new QMediaPlayer();
+    audioOutput = new QAudioOutput();
+
+    bulletSound->setAudioOutput(audioOutput);
+    bulletSound->setSource(QUrl("qrc:/assets/audio/explosion.wav"));
+    audioOutput->setVolume(50);
+}
+
 void Player::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_Left)
@@ -23,6 +33,11 @@ void Player::keyPressEvent(QKeyEvent *event)
         bullet->setPos(x() + 45, y());
         //TODO --->> CHECK NULLPTR
         scene()->addItem(bullet);
+
+        if (bulletSound->playbackState() == QMediaPlayer::PlayingState)
+            bulletSound->setPosition(0);
+        else if (bulletSound->playbackState() == QMediaPlayer::StoppedState)
+            bulletSound->play();
     }
 }
 

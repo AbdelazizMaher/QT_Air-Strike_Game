@@ -5,6 +5,6 @@
         <file>assets/images/background.jpg</file>
         <file>assets/images/Aircraft_06.png</file>
         <file>assets/audio/explosion.wav</file>
-        <file>assets/audio/ObservingTheStar.wav</file>
+        <file>assets/audio/ObservingTheStar.ogg</file>
     </qresource>
 </RCC>
