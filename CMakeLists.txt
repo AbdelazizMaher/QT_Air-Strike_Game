@@ -16,14 +16,23 @@ set(PROJECT_SOURCES
         main.cpp
 )
 
+include_directories(
+    Game/
+    Player/
+    Enemy/
+    Bullet/
+    Health/
+    Score/
+)
+
 qt_add_executable(AirStrike_Game
     ${PROJECT_SOURCES}
-    Player.h Player.cpp
-    Bullet.h Bullet.cpp
-    Enemy.h Enemy.cpp
-    Score.h Score.cpp
-    Health.h Health.cpp
-    Game.h Game.cpp
+    Player/Player.h Player/Player.cpp
+    Bullet/Bullet.h Bullet/Bullet.cpp
+    Enemy/Enemy.h Enemy/Enemy.cpp
+    Score/Score.h Score/Score.cpp
+    Health/Health.h Health/Health.cpp
+    Game/Game.h Game/Game.cpp
     resources.qrc
 )
 
