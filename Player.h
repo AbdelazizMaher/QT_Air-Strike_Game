@@ -10,15 +10,13 @@ class Player : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
 public:
-    Player(QGraphicsItem *parent= nullptr);
+    Player(QObject *parent= nullptr);
+    void moveLeft();
+    void moveRight();
+    void fireBullet();
 
-    void keyPressEvent(QKeyEvent * event) override;
-
-private:
-    QMediaPlayer * bulletSound;
-    QAudioOutput * audioOutput;
-public slots:
-    void spawnEnemy();
+signals:
+    void bulletFired();
 };
 
 #endif // PLAYER_H

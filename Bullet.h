@@ -8,9 +8,11 @@ class Bullet : public QObject, public QGraphicsPixmapItem
     Q_OBJECT
 public:
     Bullet(QGraphicsItem *parent= nullptr);
-
+signals:
+    void bulletCollided(QGraphicsItem *item1, Bullet *bullet);
+    void bulletDestroyed(Bullet* bullet);
 public slots:
-    void fireBullet();
+    void onFireTimeout();
 };
 
 #endif // BULLET_H

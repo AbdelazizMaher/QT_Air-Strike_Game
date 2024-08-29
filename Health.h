@@ -3,13 +3,17 @@
 
 #include <QGraphicsTextItem>
 
-class Health: public QGraphicsTextItem{
+class Health: public QGraphicsTextItem
+{
+    Q_OBJECT
 public:
-    Health(QGraphicsItem * parent=0);
+    Health(QObject * parent=nullptr);
     void decrease();
     int getHealth();
 private:
     int m_health;
+signals:
+    void healthDepleted();
 };
 
 #endif // HEALTH_H

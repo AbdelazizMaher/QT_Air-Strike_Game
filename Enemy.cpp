@@ -5,8 +5,6 @@
 #include <QGraphicsScene>
 #include <random>
 
-extern Game * game; // there is an external global object called game
-
 Enemy::Enemy(QGraphicsItem *parent) : QGraphicsPixmapItem(parent)
 {
     std::random_device rd;
@@ -31,13 +29,6 @@ Enemy::Enemy(QGraphicsItem *parent) : QGraphicsPixmapItem(parent)
 void Enemy::moveDown()
 {
     setPos(x(), y() + 5);
-    if (y() >= 700)
-    {
-        game->m_health->decrease();
-
-        //TODO --->> CHECK NULLPTR
-        scene()->removeItem(this);
-        // TODO not best practice
-        delete this;
-    }
+    if (y() >= 600)
+        emit enemyDestroyed(this, DeathCause::OutOfScreen);
 }

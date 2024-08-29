@@ -6,45 +6,29 @@
 #include <QGraphicsScene>
 #include <typeinfo>
 
-extern Game * game; // there is an external global object called game
 
 Bullet::Bullet(QGraphicsItem *parent) : QGraphicsPixmapItem(parent)
 {
     setPixmap(QPixmap(":/assets/images/bullet.png"));
 
     QTimer * timer = new QTimer(this);
-
-    connect(timer, &QTimer::timeout, this, &Bullet::fireBullet);
-
+    connect(timer, &QTimer::timeout, this, &Bullet::onFireTimeout);
     timer->start(50);
 }
 
-void Bullet::fireBullet()
+void Bullet::onFireTimeout()
 {
     QList<QGraphicsItem *> colliding_items = collidingItems();
-    for (int i = 0, n = colliding_items.size(); i < n; ++i)
+    for (auto item : colliding_items)
     {
-        if (typeid(*(colliding_items[i])) == typeid(Enemy))
+        if (dynamic_cast<Enemy *>(item))
         {
-            game->m_score->increase();
-
-            // remove them both
-            scene()->removeItem(colliding_items[i]);
-            scene()->removeItem(this);
-            // delete them both
-            delete colliding_items[i];
-            delete this;
-
+            emit bulletCollided(item, this);
             return;
         }
     }
 
     setPos(x(), y() - 10);
     if (y() < 0)
-    {
-        //TODO --->> CHECK NULLPTR
-        scene()->removeItem(this);
-        // TODO not best practice
-        delete this;
-    }
+        emit bulletDestroyed(this);
 }
