@@ -25,6 +25,8 @@
 
 ### Player Module
 
+---
+
 - **`Functionality:`** Represents the player's ship, which can move left or right and fire bullets.
 - **`Logic:`** 
   - **Movement:** The player can move left or right within the game boundaries using the `moveLeft` and `moveRight` methods.
@@ -36,6 +38,8 @@
   - **Bullet Creation:** Emits the `bulletFired` signal when the player fires a bullet, triggering the bullet creation in the `Game` class.
 
 ### Bullet Module
+
+---
 
 - **`Functionality:`** Represents bullets fired by the player, which move upwards and interact with enemies.
 - **`Logic:`** 
@@ -51,6 +55,8 @@
 
 ### Enemy Module
 
+---
+
 - **`Functionality:`** Represents enemies that spawn at random positions at the top of the screen and move downwards.
 - **`Logic:`** 
   - **Spawning:** Enemies spawn at random x-positions and move downwards using the `moveDown` slot.
@@ -64,6 +70,8 @@
 
 ### Score Module
 
+---
+
 - **`Functionality:`** Tracks and displays the player's score.
 - **`Logic:** 
   - **Score Management:** The score increases when an enemy is destroyed by a bullet.
@@ -74,6 +82,8 @@
   - **Score Update:** The score is updated whenever the `increase` method is called, typically when an enemy is destroyed.
 
 ### Health Module
+
+---
 
 - **`Functionality:`** Tracks and displays the player's remaining health.
 - **`Logic:** 
@@ -86,6 +96,8 @@
 
 ## Qt APIs Used
 
+---
+
 - **`QGraphicsScene:`** Manages the scene that holds all the game entities (player, bullets, enemies, score, health).
 - **`QGraphicsView:`** Provides the view for the `QGraphicsScene`, allowing the game to be displayed on the screen.
 - **`QGraphicsItem/QGraphicsPixmapItem:`** Represents game entities like the player, bullets, and enemies with images.
@@ -96,4 +108,6 @@
 - **`Signals and Slots:*`* Manages communication between different game entities, such as bullet collisions and enemy destruction.
 - **`Parent-Child Relationship:`** Ensures proper memory management and event propagation between Qt objects, with `Game` as the parent of most game entities.
 
+## Project Demo Video
 
+[[Air Strike Demo]](https://youtu.be/zsGSoO69Vu0)
