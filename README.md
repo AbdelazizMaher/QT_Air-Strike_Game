@@ -2,6 +2,9 @@
 
 **`QT Air-Strike Game`** is an arcade-style shooting game developed using `C++` and `Qt`. The game features a player-controlled ship that must shoot down incoming `enemies` while avoiding them to escape. The game tracks the `player's score` and `health`, and ends when the player's `health is depleted.`
 
+## Air-Strike Demo
+https://github.com/user-attachments/assets/f8479e64-de54-4dcd-a270-f9d53581e9dc
+
 ## Modules Overview
 
 ### Game Module
