@@ -111,6 +111,3 @@ https://github.com/user-attachments/assets/f8479e64-de54-4dcd-a270-f9d53581e9dc
 - **`Signals and Slots:*`* Manages communication between different game entities, such as bullet collisions and enemy destruction.
 - **`Parent-Child Relationship:`** Ensures proper memory management and event propagation between Qt objects, with `Game` as the parent of most game entities.
 
-## Project Demo Video
-
-[[Air Strike Demo]](https://youtu.be/zsGSoO69Vu0)
